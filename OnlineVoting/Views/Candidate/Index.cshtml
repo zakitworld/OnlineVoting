@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Candidate>
+
+<h2>Candidates</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Party</th>
+            <th>ProfileImage</th>
+            <!-- Other candidate properties -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var candidate in Model)
+        {
+            <tr>
+                <td>@candidate.Name</td>
+                <td>@candidate.Party</td>
+                <td>@candidate.ProfileImage</td>
+                <!-- Other candidate properties -->
+            </tr>
+        }
+    </tbody>
+</table>

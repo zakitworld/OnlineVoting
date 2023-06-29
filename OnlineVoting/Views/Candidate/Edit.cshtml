@@ -1,0 +1,27 @@
+﻿@model Candidate
+
+<h2>Edit Candidate</h2>
+
+<form asp-controller="Candidate" asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Party">Party</label>
+        <input asp-for="Party" class="form-control" />
+        <span asp-validation-for="Party" class="text-danger"></span>
+    </div>
+    <!-- Other candidate properties -->
+
+    <div class="form-group">
+        <label asp-for="ProfileImage">Profile Image</label>
+        <input asp-for="ProfileImage" type="file" class="form-control-file" />
+        <span asp-validation-for="ProfileImage" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

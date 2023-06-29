@@ -1,0 +1,15 @@
+﻿@model VoteViewModel
+
+<h2>Vote</h2>
+
+<form asp-action="Vote">
+    <div class="form-group">
+        <label asp-for="CandidateId">Candidate</label>
+        <select asp-for="CandidateId" asp-items="@Model.Candidates" class="form-control">
+            <option value="">Select a candidate</option>
+        </select>
+        <span asp-validation-for="CandidateId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Vote</button>
+</form>

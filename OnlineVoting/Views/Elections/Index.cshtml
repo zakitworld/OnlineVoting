@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Election>
+
+<h2>Elections</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <!-- Other election properties -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var election in Model)
+        {
+            <tr>
+                <td>@election.Name</td>
+                <!-- Other election properties -->
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model Candidate
+
+<h2>Create Candidate</h2>
+
+<div class="row">
+<form method="post" enctype="multipart/form-data" asp-controller="Candidate" asp-action="Create" data-ajax="true" data-ajax-method="post" data-ajax-begin="onBegin" data-ajax-complete="onComplete">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Party">Party</label>
+        <input asp-for="Party" class="form-control" />
+        <span asp-validation-for="Party" class="text-danger"></span>
+    </div>
+
+        <div class="form-group text-center">
+            <img id="ProfileImagePreview" class="border-info rounded-circle" style="max-width: 150px" />
+        </div>
+    <div class="form-group">
+        <label asp-for="ProfileImage">Profile Image</label>
+        <input asp-for="ProfileImage" type="file" class="form-control-file" accept=".png,.jpg,.jpeg,.gif,.tif" />
+        <span asp-validation-for="ProfileImage" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+            var output = document.getElementById('ProfileImagePreview');
+            output.src = $("#ProfileImage").val();
+        })
+
+        $("#ProfileImage").on("change", function () {
+            var output = document.getElementById('ProfileImagePreview');
+            output.src = $(this).val();
+        })
+    </script>
+}
